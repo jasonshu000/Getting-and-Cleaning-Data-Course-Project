@@ -38,4 +38,4 @@ mean_std_data <- subset(merged_data, select=c(1,mean_index,std_index,activity))
 final_data <- mean_std_data %>% group_by(subject_id, activity) %>% summarise_each(funs(mean))
 
 ## write the new tidy data set to a file for uploading
-write.csv(final_data, file="final_data.txt")
+write.table(final_data, file="final_data.txt", row.name=FALSE)
