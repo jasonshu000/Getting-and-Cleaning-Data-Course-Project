@@ -1,4 +1,4 @@
-library(plyr)
+library(dplyr)
 
 ## read the data
 subject_test <- read.csv("UCI HAR Dataset\\test\\subject_test.txt", header=FALSE)
@@ -33,3 +33,9 @@ merged_data <- rbind(test_merged, train_merged)
 mean_index <- grep("mean",names(merged_data))
 std_index <- grep("std",names(merged_data))
 mean_std_data <- subset(merged_data, select=c(1,mean_index,std_index,activity))
+
+## take the mean of each variable for each subject and activity
+final_data <- mean_std_data %>% group_by(subject_id, activity) %>% summarise_each(funs(mean))
+
+## write the new tidy data set to a file for uploading
+write.csv(final_data, file="final_data.txt")
