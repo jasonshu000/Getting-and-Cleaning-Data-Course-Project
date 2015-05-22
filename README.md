@@ -1,8 +1,8 @@
 # Getting and Cleaning Data Course Project Readme
 
 ## Files
-README.md- this file
-Codebook.md- code book that describes all variables used in the analysis, and the columns in the final dataset
+README.md- this file  
+Codebook.md- code book that describes all variables used in the analysis, and the columns in the final dataset  
 run_analysis.R- the code that runs the analysis, which is explained in detail below
 
 ## run_analysis code explanation
